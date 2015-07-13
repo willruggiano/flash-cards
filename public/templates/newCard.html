@@ -1,0 +1,19 @@
+<div ng-controller="NewCardCtrl">
+  <form name="newCardForm" ng-submit="submit()">
+    Question: <input type="text" name="question" ng-model="newCard.question" required />
+    <span ng-show="newCardForm.question.$error.required">Question is a required field</span><br>
+    Category: <select name="category" ng-model="newCard.category" required>
+      <option value="MongoDB">MongoDB</option>
+      <option value="Express">Express</option>
+      <option value="Angular">Angular</option>
+      <option value="Node">Node</option>
+    </select><span ng-show="newCardForm.category.$error.required">  Category is a required field</span><br>
+    Answer... <input type="text" name="answer1" ng-model="newCard.answers[0].text" ng-maxlength="40" /><input ng-model="newCard.answers[0].correct" type="checkbox" />
+    <span ng-show="newCardForm.answer1.$error.maxlength">Answer is too long</span><br>
+    Answer... <input type="text" name="answer2" ng-model="newCard.answers[1].text" ng-maxlength="40" /><input ng-model="newCard.answers[1].correct" type="checkbox" />
+    <span ng-show="newCardForm.answer2.$error.maxlength">Answer is too long</span><br>
+    Answer... <input type="text" name="answer3" ng-model="newCard.answers[2].text" ng-maxlength="40" /><input ng-model="newCard.answers[2].correct" type="checkbox" />
+    <span ng-show="newCardForm.answer3.$error.maxlength">Answer is too long</span><br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
